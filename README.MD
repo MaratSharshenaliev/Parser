@@ -4,6 +4,9 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/MaratSharshenaliev/Parser.git)
 
+
+
+
 ## Requiments:
 
 - beautifulsoup4 
@@ -52,16 +55,8 @@ db = PostgresqlDatabase(
 )
 ```
 
-##### Then you most write your ``User-Agent``  main.py 11 line :
 
-#
-```
-headers = {
-    "Accept": "*/*",
-    "User-Agent": "Here ..."
-}
-```
-## Then you car easy start parsing...
+## Then you can easy start parsing...
 
 ```sh
 python3 main.py
