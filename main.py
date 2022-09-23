@@ -22,8 +22,9 @@ def saveTocsv(data: Dict) -> int:
 
 
 def getData() -> int:
+    print("Parser has been started...")
     global somethingI
-    for i in range(1, 94):
+    for i in range(1, 2):
         BASE_URL = f"https://www.kijiji.ca/b-apartments-condos/city-of-toronto/page-{i}/c37l1700273"
         res = requests.get(BASE_URL, headers)
         soup = BS(res.content, 'html.parser')
@@ -46,7 +47,7 @@ def getData() -> int:
                 "price": price
             }
             somethingI = saveTocsv(data)
-        print(f"[INFO] Обработано - {i} страницы")
+        print(f"[Parsing] Parsed - {i} pages...[OK]")
     return 0 if somethingI == 0 else 1
 
 
@@ -59,12 +60,11 @@ def save_database(data: str):
     if len(str(price)) > 7:
         price = str(price)[:-3]
 
-    print(link_of_photo, date_posted, price)
-    # Data(
-    #     link_of_photo=link_of_photo,
-    #     date_posted=date_posted,
-    #     price=price
-    # ).save()
+    Data(
+        link_of_photo=link_of_photo,
+        date_posted=date_posted,
+        price=price
+    ).save()
 
 
 def save():
@@ -77,7 +77,18 @@ def save():
             save_database(pack)
 
 
+# Here not much game to start 😂😂
+def isRun(prompt):
+    while True:
+        try:
+            return {"Y": True, "y": True, "N": False, "n": False}[input(prompt).lower()]
+        except KeyError:
+            print("Invalid input, please enter Y or N!")
+
+
 if __name__ == '__main__':
-    somethingO = getData()
+
+    somethingO = getData() if isRun("Run will be parsing? Yes - Y/N - No: ") else 1
     if somethingO == 0:
-        save()
+        if isRun("Datas has downloaded.Save anywere? Yes - Y/N - No: "):
+            save()
