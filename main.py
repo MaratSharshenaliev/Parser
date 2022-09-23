@@ -24,7 +24,7 @@ def saveTocsv(data: Dict) -> int:
 def getData() -> int:
     print("Parser has been started...")
     global somethingI
-    for i in range(1, 2):
+    for i in range(1, 93):
         BASE_URL = f"https://www.kijiji.ca/b-apartments-condos/city-of-toronto/page-{i}/c37l1700273"
         res = requests.get(BASE_URL, headers)
         soup = BS(res.content, 'html.parser')
