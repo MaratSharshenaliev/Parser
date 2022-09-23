@@ -81,7 +81,7 @@ def save():
 def isRun(prompt):
     while True:
         try:
-            return {"Y": True, "y": True, "N": False, "n": False}[input(prompt).lower()]
+            return {"y": True, "n": False,}[input(prompt).lower()]
         except KeyError:
             print("Invalid input, please enter Y or N!")
 

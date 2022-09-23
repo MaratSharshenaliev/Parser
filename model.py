@@ -6,7 +6,7 @@ from peewee import Model, \
 
 db = PostgresqlDatabase(
     database="HouseDB",
-    password="password123",
+    password="Redux200316",
     user="postgres",
     host="localhost",
     port=5432
