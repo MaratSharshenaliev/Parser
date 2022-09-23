@@ -5,8 +5,8 @@ from peewee import Model, \
     PostgresqlDatabase
 
 db = PostgresqlDatabase(
-    database="HouseDB",
-    password="Redux200316",
+    database="",
+    password="",
     user="postgres",
     host="localhost",
     port=5432
