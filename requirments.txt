@@ -4,3 +4,4 @@ peewee==3.15.3
 psycopg2==2.9.3
 psycopg2-binary==2.9.3
 requests==2.28.1
+termcolor==2.0.1
