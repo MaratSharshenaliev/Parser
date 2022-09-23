@@ -31,7 +31,7 @@ def getData() -> int:
     global somethingI
     count = 0
     # 94 pages
-    for i in range(1, 3):
+    for i in range(1, 94):
         BASE_URL = f"https://www.kijiji.ca/b-apartments-condos/city-of-toronto/page-{i}/c37l1700273"
         res = requests.get(BASE_URL, headers=headers, proxies=random.choice(proxies))
         soup = BS(res.content, 'html.parser')
